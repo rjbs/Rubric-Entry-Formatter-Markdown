@@ -26,8 +26,8 @@ use Text::Markdown;
 =cut
 
 sub as_html {
-  my ($class, $arg) = @_;
-  return Text::Markdown::markdown($arg->{text});
+  my ($class, $arg, $config) = @_;
+  return Text::Markdown::markdown($arg->{text}, $config);
 }
 
 sub as_text {
