@@ -23,6 +23,10 @@ use Text::Markdown;
 
 =head1 METHODS
 
+=head2 C< as_html >
+
+=head2 C< as_text >
+
 =cut
 
 sub as_html {
