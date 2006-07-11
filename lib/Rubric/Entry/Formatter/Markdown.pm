@@ -1,5 +1,5 @@
 package Rubric::Entry::Formatter::Markdown;
-our $VERSION = '0.01';
+our $VERSION = '0.551';
 
 =head1 NAME
 
@@ -55,7 +55,7 @@ changes.
 
 =head1 COPYRIGHT
 
-Copyright 2005 Ricardo SIGNES.  This program is free software;  you can
+Copyright 2005-2006 Ricardo SIGNES.  This program is free software;  you can
 redistribute it and/or modify it under the same terms as Perl itself.
 
 =cut
