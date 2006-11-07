@@ -1,5 +1,8 @@
 Revision history for Rubric-Entry-Formatter-Markdown
 
+0.552   2006-11-06
+        perl-critic tests
+
 0.551   2006-06-23
         update module::install version
 

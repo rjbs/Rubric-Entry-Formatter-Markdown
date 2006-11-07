@@ -1,5 +1,8 @@
+use strict;
+use warnings;
+
 package Rubric::Entry::Formatter::Markdown;
-our $VERSION = '0.551';
+our $VERSION = '0.552';
 
 =head1 NAME
 
@@ -9,15 +12,14 @@ Rubric::Entry::Formatter::Markdown - format entries with Markdown (duh!)
 
  $Id: /my/cs/projects/rubric/trunk/lib/Rubric/Entry/Formatter/Nil.pm 18100 2006-01-26T13:59:16.285684Z rjbs  $
 
+version 0.552
+
 =head1 DESCRIPTION
 
 This formatter will use Markdown (specifically, Text::Markdown) to format
 entries into HTML.
 
 =cut
-
-use strict;
-use warnings;
 
 use Text::Markdown;
 
