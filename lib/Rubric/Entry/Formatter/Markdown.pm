@@ -10,7 +10,7 @@ Rubric::Entry::Formatter::Markdown - format entries with Markdown (duh!)
 
 =head1 VERSION
 
- $Id: /my/cs/projects/rubric/trunk/lib/Rubric/Entry/Formatter/Nil.pm 18100 2006-01-26T13:59:16.285684Z rjbs  $
+ $Id$
 
 version 0.552
 
