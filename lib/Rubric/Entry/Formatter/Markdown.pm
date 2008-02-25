@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Rubric::Entry::Formatter::Markdown;
-our $VERSION = '0.552';
+our $VERSION = '0.553';
 
 =head1 NAME
 
@@ -10,9 +10,7 @@ Rubric::Entry::Formatter::Markdown - format entries with Markdown (duh!)
 
 =head1 VERSION
 
- $Id$
-
-version 0.552
+version 0.553
 
 =head1 DESCRIPTION
 
@@ -33,7 +31,7 @@ use Text::Markdown;
 
 sub as_html {
   my ($class, $arg, $config) = @_;
-  return Text::Markdown::markdown($arg->{text}, $config);
+  return Text::Markdown->new(%$config)->markdown($arg->{text});
 }
 
 sub as_text {
