@@ -1,6 +1,8 @@
 Revision history for Rubric-Entry-Formatter-Markdown
 
 {{$NEXT}}
+
+0.554     2012-02-24 08:17:32 America/New_York
         add multimarkdown support
 
         convert to Dist::Zilla
