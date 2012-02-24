@@ -1,7 +1,9 @@
 Revision history for Rubric-Entry-Formatter-Markdown
 
-0.554   2012-02-23
+{{$NEXT}}
         add multimarkdown support
+
+        convert to Dist::Zilla
 
 0.553   2008-02-24
         perl-critic tests
