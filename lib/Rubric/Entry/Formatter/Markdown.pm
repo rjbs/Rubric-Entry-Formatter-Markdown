@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Rubric::Entry::Formatter::Markdown;
-our $VERSION = '0.553';
+our $VERSION = '0.554';
 
 =head1 NAME
 
@@ -10,16 +10,21 @@ Rubric::Entry::Formatter::Markdown - format entries with Markdown (duh!)
 
 =head1 VERSION
 
-version 0.553
+version 0.554
 
 =head1 DESCRIPTION
 
 This formatter will use Markdown (specifically, Text::Markdown) to format
 entries into HTML.
 
+Configuration for the formatter is given to the Text::Markdown constructor,
+with the exception of the C<multimarkdown> option.  If given and true, it will
+cause the formatter to use L<Text::MultiMarkdown> instead of L<Text::Markdown>.
+
 =cut
 
-use Text::Markdown;
+use Text::Markdown ();
+use Text::MultiMarkdown ();
 
 =head1 METHODS
 
@@ -31,7 +36,12 @@ use Text::Markdown;
 
 sub as_html {
   my ($class, $arg, $config) = @_;
-  return Text::Markdown->new(%$config)->markdown($arg->{text});
+  my %config = %$config;
+  my $md = (delete $config{multimarkdown})
+         ? 'Text::MultiMarkdown'
+         : 'Text::Markdown';
+
+  return $md->new(%$config)->markdown($arg->{text});
 }
 
 sub as_text {
@@ -39,8 +49,6 @@ sub as_text {
 
   return $arg->{text};
 }
-
-=head1 TODO
 
 =head1 AUTHOR
 

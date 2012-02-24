@@ -1,16 +1,21 @@
 use strict;
-use warnings;
+use ExtUtils::MakeMaker;
 
-use inc::Module::Install;
-
-name          ('Rubric-Entry-Formatter-Markdown');
-author        ('Ricardo SIGNES <rjbs@cpan.org>');
-license       ('perl');
-version_from  ('lib/Rubric/Entry/Formatter/Markdown.pm');
-
-requires('Rubric'         => 0.13_02);
-requires('Text::Markdown' => '1.0.3');
-
-author_tests('xt');
-
-WriteAll();
+WriteMakefile(
+  NAME          => 'Rubric::Entry::Formatter::Markdown',
+  VERSION_FROM  => 'lib/Rubric/Entry/Formatter/Markdown.pm',
+  (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
+  PREREQ_PM     => {
+    'Rubric'         => 0.13_02,
+    'Text::Markdown' => '1.0.3',
+    'Text::MultiMarkdown' => 0,
+  },
+  (eval { ExtUtils::MakeMaker->VERSION(6.46) }
+    ? (META_MERGE => {
+        resources => {
+          Repository => 'http://github.com/rjbs/rubric-entry-formatter-markdown'
+        }
+      })
+    : ()
+  ),
+);
